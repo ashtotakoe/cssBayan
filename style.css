@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  height: fit-content;
+  width: 85%;
+}
+
+label {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  text-align: start;
+}
+input {
+  display: none;
+}
+input[type="radio"]:checked + label {
+  background-color: red;
+  color: white;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.grid label {
+  font-size: 1.2rem;
+}

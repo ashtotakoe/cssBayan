@@ -3,16 +3,19 @@ body {
   justify-content: center;
   align-items: center;
 }
+h1 {
+  font-size: 2.3rem;
+}
 .wrapper {
   height: fit-content;
-  width: 85%;
+  width: 80%;
 }
 .grid {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 15px;
+  gap: 1rem;
 }
 .meme-block {
   width: 100%;
@@ -21,7 +24,7 @@ body {
 }
 
 .meme {
-  /* display: none; */
+  margin: auto;
   overflow: hidden;
   max-height: 0vh;
   width: 60vw;
@@ -38,7 +41,7 @@ label {
   display: block;
   cursor: pointer;
   text-align: start;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 input {
   display: none;
@@ -52,4 +55,57 @@ label:hover > div {
   display: block;
   cursor: pointer;
   max-height: 100vh;
+}
+
+label span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+span i {
+  font-size: 0.8rem;
+  transform: rotate(45deg);
+  transition: all 0.2s ease;
+}
+
+label:hover span i {
+  transform: rotate(90deg);
+}
+
+input[type="radio"]:checked + label > span i {
+  transform: rotate(90deg);
+}
+
+@media (min-width: 1000px) {
+  h1 {
+    font-size: 3rem;
+  }
+  label {
+    color: #2929f1;
+    font-size: 2rem;
+  }
+  .grid:hover span {
+    color: black;
+  }
+  .grid:hover span i {
+    display: block !important;
+  }
+  span > i {
+    color: black;
+    display: none !important;
+  }
+  input[type="radio"]:checked + label {
+    color: black;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2rem;
+  }
+  label {
+    font-size: 1.2rem;
+  }
 }

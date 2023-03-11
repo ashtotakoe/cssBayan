@@ -12,28 +12,21 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 .meme-block {
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-.meme-block:hover {
-  cursor: pointer;
-}
-.meme-block:hover div {
-  display: block;
-}
-.grid label {
-  font-size: 1.3rem;
-}
-.meme {
-  display: none;
-  width: 560px;
-  align-self: center;
 
-  /* transform: translate(0px); */
+.meme {
+  /* display: none; */
+  overflow: hidden;
+  max-height: 0vh;
+  width: 60vw;
+  align-self: center;
+  transition: max-height 0.9s ease 0.1s;
 }
 .meme img {
   width: 100%;
@@ -45,16 +38,18 @@ label {
   display: block;
   cursor: pointer;
   text-align: start;
+  font-size: 1.3rem;
 }
 input {
   display: none;
 }
-input[type="radio"]:checked + label + div {
-  background-color: red;
-  color: white;
+input[type="radio"]:checked + label > .meme {
   display: block;
+  max-height: 100vh;
 }
 
-label:hover + div {
+label:hover > div {
   display: block;
+  cursor: pointer;
+  max-height: 100vh;
 }

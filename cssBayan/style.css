@@ -43,6 +43,9 @@ label {
   text-align: start;
   font-size: 1.5rem;
 }
+label:active > span {
+  color: #2929f1 !important;
+}
 input {
   display: none;
 }
